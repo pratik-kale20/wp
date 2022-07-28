@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<body>
+    <input type="number" id="countryCode" placeholder="Country Code">
+    <input type="number" id="mob" placeholder="Enter Phone Number">
+    <button onclick="getVal()" >Send</button>
+
+    <script>
+       function getVal() {
+       const mob = document.getElementById('mob').value;
+       const countryCode = document.getElementById('countryCode').value;
+       const wpLink = 'https://wa.me/'+countryCode+mob+'?text=Hi%20This%20is%20a%20test'
+       console.log(wpLink)
+       window.open(wpLink)
+      
+
+}
+    </script>
+</body>
+</html>
