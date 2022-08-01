@@ -131,24 +131,32 @@
         <h2>Contact Detail Sender</h2>
       </div>
       <div class="wrapper">
-        <div class="input">
-          <input
-            type="number"
-            id="countryCode"
-            value="91"
-            placeholder="Country Code"
+        <form onsubmit="getVal()">
+          <div class="input">
+            <input
+              type="number"
+              id="countryCode"
+              value="91"
+              placeholder="Country Code"
+              required
+            />
+            <input
+              type="number"
+              id="mob"
+              placeholder="Enter Phone Number"
+              required
+            />
+          </div>
+          <small>* Use $ for New Line/Enter</small>
+          <textarea
+            id="msg"
+            rows="10"
+            cols="100"
+            name="msg"
             required
-          />
-          <input
-            type="number"
-            id="mob"
-            placeholder="Enter Phone Number"
-            required
-          />
-        </div>
-        <small>* Use $ for New Line/Enter</small>
-        <textarea id="msg" rows="10" cols="100" name="msg" required></textarea>
-        <button onclick="getVal()">Send</button>
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </main>
 
