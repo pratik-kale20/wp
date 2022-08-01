@@ -8,44 +8,41 @@
   </head>
   <body>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-      body{
+      body {
         margin: 0;
         padding: 0;
         width: auto;
-        font-family: 'Poppins', sans-serif;
-      } 
+        font-family: "Poppins", sans-serif;
+      }
 
-      .logo{
+      .logo {
         height: 6rem;
         margin-bottom: 0.5rem;
       }
 
-      .header{
+      .header {
         display: flex;
-       justify-content: center;
-       align-items: center;
+        justify-content: center;
+        align-items: center;
       }
-      
-      main{
+
+      main {
         display: flex;
         flex-direction: column;
         padding: 1rem;
-        
       }
 
-      #countryCode{
+      #countryCode {
         width: 18%;
       }
 
-      #mob{
+      #mob {
         width: 80%;
       }
 
-      .wrapper{
-        
+      .wrapper {
         padding: 1rem;
         border-radius: 0.3rem;
       }
@@ -57,68 +54,94 @@
         margin-bottom: 0.7rem;
         border-radius: 4px;
         font-size: 1.2rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: "Poppins", sans-serif;
         padding: 10px;
-      } 
-      
-      .input{
+        border: 1px solid #ccc;
+      }
+
+      .input {
         width: 100%;
         margin-bottom: 0.7rem;
       }
-        input[type=number]{       
-            padding: 12px 12px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size:1.2rem;
-            font-family: 'Poppins', sans-serif;
-        }
+      input[type="number"] {
+        padding: 12px 12px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+        font-family: "Poppins", sans-serif;
+      }   
 
-      button{
+      textarea,input:focus {
+        outline: none !important;
+        border: 1px solid rgb(71, 71, 71);
+        box-shadow: 0 0 10px #719ece;
+      }
+      button {
         width: 100%;
         cursor: pointer;
         border-radius: 0.3rem;
         padding: 8px;
         font-size: 1.2rem;
-        font-family: 'Poppins', sans-serif;
-        background: rgb(0,185,226);
-        background: linear-gradient(90deg, rgba(0,185,226,1) 0%, rgba(87,79,159,1) 35%, rgba(85,81,160,1) 61%, rgba(27,152,205,1) 84%);
+        font-family: "Poppins", sans-serif;
+        background: rgb(0, 185, 226);
+        background: linear-gradient(
+          90deg,
+          rgba(0, 185, 226, 1) 0%,
+          rgba(87, 79, 159, 1) 35%,
+          rgba(85, 81, 160, 1) 61%,
+          rgba(27, 152, 205, 1) 84%
+        );
         color: white;
+        border: 1px solid #ccc;
+        font-weight: bold;
+      }
+
+      button:focus{
+        outline: none !important;
+        border: 1px solid rgb(71, 71, 71);
+        box-shadow: 0 0 10px #719ece;
       }
     </style>
 
     <main>
-        <div class="header">
-            <img class="logo" src="logo.svg" alt="U-SMART LOGO">
-            <h2>Contact Detail Sender</h2>
+      <div class="header">
+        <img class="logo" src="logo.svg" alt="U-SMART LOGO" />
+        <h3>Contact Detail Sender</h3>
+      </div>
+      <div class="wrapper">
+        <div class="input">
+          <input
+            type="number"
+            id="countryCode"
+            value="91"
+            placeholder="Country Code"
+            required
+          />
+          <input
+            type="number"
+            id="mob"
+            placeholder="Enter Phone Number"
+            required
+          />
         </div>
-        <div class="wrapper" >
-            <div class="input">
-                <input type="number"  id="countryCode" value="91" placeholder="Country Code" required />
-                <input type="number"  id="mob" placeholder="Enter Phone Number" required />
-            </div>
-            <textarea id="msg" rows="10" cols="100" name="msg" required>Hi this is a test message</textarea>
-            <button onclick="getVal()">Send</button>
-        </div>
-        
+        <textarea id="msg" rows="10" cols="100" name="msg" required>Name:Pratik Kale Email: ppvkale@gmail.com</textarea
+        >
+        <button onclick="getVal()">Send</button>
+      </div>
     </main>
-    
+
     <script>
       function getVal() {
         const mob = document.getElementById("mob").value;
         const countryCode = document.getElementById("countryCode").value;
         const msg = document.getElementById("msg").value;
-        const wpLink =
-          "https://wa.me/"+
-          countryCode +
-          mob +
-          "?text="+msg;
+        const wpLink = "https://wa.me/" + countryCode + mob + "?text=" + msg;
         console.log(wpLink);
         window.open(wpLink);
       }
     </script>
-  
-</body>
+  </body>
 </html>
