@@ -63,7 +63,10 @@
         width: 100%;
         margin-bottom: 0.7rem;
       }
-      input[type="number"] {
+      #msg{
+        height: 10rem  ;
+      }
+      input {
         padding: 12px 12px;
         margin: 8px 0;
         display: inline-block;
@@ -128,7 +131,8 @@
             required
           />
         </div>
-        <textarea id="msg" rows="10" cols="100" name="msg" required >Name:Pratik Kale &#13; Email:ppvkale@gmail.com</textarea>
+        <small>* Use $ for New Line/Enter</small>
+        <textarea id="msg" rows="10" cols="100" name="msg" required >Name:Pratik Kale $ Email:ppvkale@gmail.com</textarea>
         <button onclick="getVal()">Send</button>
       </div>
     </main>
@@ -138,7 +142,8 @@
         const mob = document.getElementById("mob").value;
         const countryCode = document.getElementById("countryCode").value;
         const msg = document.getElementById("msg").value;
-        const wpLink = "https://wa.me/" + countryCode + mob + "?text=" + msg;
+        const formattedMsg = msg.replace("$","%0a")
+        const wpLink = "https://wa.me/" + countryCode + mob + "?text=" + formattedMsg;
         console.log(wpLink);
         window.open(wpLink);
       }
